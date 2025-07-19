@@ -6,21 +6,18 @@ public class ControllerProducer {
     private String timestamp;
     private Object payload;
 
-    public void setRequestType(String requestType) {
+    public ControllerProducer(String requestType,
+                              String sourceService,
+                              String timestamp,
+                              Object payload) {
         this.requestType = requestType;
-    }
-    public void setSourceService(String sourceService) {
         this.sourceService = sourceService;
-    }
-    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
-    }
-    public void setDaysOfHolidays(Object payload) {
         this.payload = payload;
     }
 
     public String getRequestType() {return requestType;}
     public String getSourceService() {return sourceService;}
     public String getTimestamp() {return timestamp;}
-    public Object getDaysOfHolidays() {return payload;}
+    public Object getPayload() {return payload;}
 }
