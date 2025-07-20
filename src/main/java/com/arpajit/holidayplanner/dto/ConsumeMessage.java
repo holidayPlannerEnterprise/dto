@@ -1,18 +1,21 @@
 package com.arpajit.holidayplanner.dto;
 
-public class KafkaMessage {
+public class ConsumeMessage {
     private String requestType;
     private String sourceService;
     private String timestamp;
     private String payload;
 
-    public KafkaMessage(String requestType,
-                              String sourceService,
-                              String timestamp,
-                              String payload) {
+    public void setRequestType(String requestType) {
         this.requestType = requestType;
+    }
+    public void setSourceService(String sourceService) {
         this.sourceService = sourceService;
+    }
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
+    }
+    public void setPayload(String payload) {
         this.payload = payload;
     }
 
