@@ -1,11 +1,15 @@
 package com.arpajit.holidayplanner.dto;
 
 public class ConsumeMessage {
+    private String traceId;
     private String requestType;
     private String sourceService;
     private String timestamp;
     private String payload;
 
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
     public void setRequestType(String requestType) {
         this.requestType = requestType;
     }
@@ -19,6 +23,7 @@ public class ConsumeMessage {
         this.payload = payload;
     }
 
+    public String getTraceId() {return traceId;}
     public String getRequestType() {return requestType;}
     public String getSourceService() {return sourceService;}
     public String getTimestamp() {return timestamp;}
