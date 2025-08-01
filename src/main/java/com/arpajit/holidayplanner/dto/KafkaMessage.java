@@ -1,5 +1,8 @@
 package com.arpajit.holidayplanner.dto;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class KafkaMessage {
     private String traceId;
     private String requestType;
@@ -9,13 +12,14 @@ public class KafkaMessage {
     private String status;
     private String statusResp;
 
-    public KafkaMessage(String traceId,
-                            String requestType,
-                            String sourceService,
-                            String timestamp,
-                            String payload,
-                            String status,
-                            String statusResp) {
+    @JsonCreator
+    public KafkaMessage(@JsonProperty("traceId") String traceId,
+                        @JsonProperty("requestType") String requestType,
+                        @JsonProperty("sourceService") String sourceService,
+                        @JsonProperty("timestamp") String timestamp,
+                        @JsonProperty("payload") String payload,
+                        @JsonProperty("status") String status,
+                        @JsonProperty("statusResp") String statusResp) {
         this.traceId = traceId;
         this.requestType = requestType;
         this.sourceService = sourceService;
